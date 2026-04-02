@@ -1,6 +1,17 @@
+<p align="center">
+  <img src="couverture - carré.png" alt="Avant les mots" width="400"/>
+</p>
+
 # Avant les mots
 
 Une nouvelle sur l'authenticité, le deuil et le pouvoir des mots simples.
+
+## Écouter & Lire
+
+| Format | Lien |
+|--------|------|
+| 📄 Livre PDF | [Avant_les_mots.pdf](Avant_les_mots.pdf) |
+| 🔊 Fichiers audio | [audiobook/](audiobook/) |
 
 ---
 
