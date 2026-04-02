@@ -268,6 +268,19 @@ def main():
         print(f"  Fusion finale -> {final.name}")
         print(f"{'='*60}")
         concatenate_wav_entries(chapter_entries, final)
+        # Ajouter silence final (8s) en réécrivant le fichier
+        channels, sampwidth, framerate = get_wav_params(final)
+        trailing = make_silence_frames(channels, sampwidth, framerate, 5.0)
+        with wave_mod.open(str(final), 'rb') as wf:
+            original_frames = wf.readframes(wf.getnframes())
+        tmp = final.with_suffix('.tmp.wav')
+        with wave_mod.open(str(tmp), 'wb') as wf:
+            wf.setnchannels(channels)
+            wf.setsampwidth(sampwidth)
+            wf.setframerate(framerate)
+            wf.writeframes(original_frames)
+            wf.writeframes(trailing)
+        tmp.replace(final)
         print(f"\n  [OK] {final.name} - {final.stat().st_size // (1024*1024)} MB")
 
 
