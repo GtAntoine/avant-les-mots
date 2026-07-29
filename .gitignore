@@ -1,3 +1,4 @@
 audiobook/chunks/
 test_voix_*.wav
+*.wav
 .claude/
